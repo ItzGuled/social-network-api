@@ -41,10 +41,11 @@ const thoughtController = {
       })
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: "No thought with this id!" });
+          res.status(404).json({ message: "No user with this id!" });
           return;
         }
-        res.json(dbThoughtData);
+       
+        res.status().json({ message: "No user with this id!" });
       })
       .catch((err) => res.json(err));
   },
