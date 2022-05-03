@@ -44,7 +44,7 @@ const thoughtController = {
           res.status(404).json({ message: "No user with this id!" });
           return;
         }
-       
+
         res.status().json({ message: "No user with this id!" });
       })
       .catch((err) => res.json(err));
@@ -85,7 +85,7 @@ const thoughtController = {
 
   addReaction({ params, body }, res) {
     Thought.findOneAndUpdate(
-      { _id: params.id },
+      { _id: params.thoughtId  },
       { $push: { reactions: body } },
       { new: true, runValidators: true }
     )
